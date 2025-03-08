@@ -1,11 +1,4 @@
-on:
-  workflow_call:
-    inputs:
-      disable-windows:
-        description: Disable running tests on Windows
-        type: boolean
-        default: false
-        required: false
+on: [workflow_call]
 
 jobs:
   test_linux:
@@ -13,33 +6,6 @@ jobs:
     strategy:
       matrix:
         node: ["lts/iron", "lts/jod", "latest"]
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Install Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node }}
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          run_install: true
-
-      - name: Run tests
-        run: pnpm run test
-        env:
-          CI: true
-
-  test_windows:
-    if: ${{ !inputs.disable-windows }}
-    runs-on: windows-latest
-    strategy:
-      matrix:
-        node: ["lts/iron", "lts/jod", "latest"]
-        exclude:
-          - node: latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
