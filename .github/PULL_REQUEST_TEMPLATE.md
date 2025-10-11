@@ -15,6 +15,8 @@ Please carefully read the contribution docs before creating a pull request
 - [ ] 👌 Enhancement (improving an existing functionality like performance)
 - [ ] ✨ New feature (a non-breaking change that adds functionality)
 - [ ] ⚠️ Breaking change (fix or feature that would cause existing functionality to change)
+- [ ] 📝 Documentation (changing existing documentation only)
+- [ ] 🔨 Other (changes that don't fit any of the other categories)
 
 ### 📚 Description
 
