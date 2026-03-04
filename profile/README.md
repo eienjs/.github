@@ -1,4 +1,4 @@
-EienJS open source packages in the AdonisJS ecosystem.
+EienJS open source packages in the AdonisJS ecosystem and other OpenSources projects.
 
 ## Content
 
