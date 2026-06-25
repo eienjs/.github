@@ -60,9 +60,7 @@ Following is the list of tools in use.
 | Tool                   | Usage                                                                                                                                                                                                                                                                  |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | TypeScript             | All of the repos are authored in TypeScript. The compiled JavaScript and Type-definitions are published on npm.                                                                                                                                                        |
-| TS Node                | We use [ts-node-maintained](https://github.com/thetutlage/ts-node-maintained) to run tests or scripts without compiling TypeScript. The main goal of ts-node-maintained is to have a faster feedback loop during development                                                                                  |
-| SWC                    | [SWC](https://swc.rs/) is a Rust based TypeScript compiler. TS Node ships with first-class support for using SWC over the TypeScript official compiler. The main reason for using SWC is the speed gain.                                                               |
-| NP                     | We use [np](https://github.com/sindresorhus/np) to publish our packages on npm. Np does all the heavy lifting of creating a release and publishes it on npm and Github. The np config is defined within the `package.json` file.                                       |
+| Release-it             | We use [release-it](https://github.com/release-it/release-it) to publish our packages on npm. Release-it does all the heavy lifting of creating a release and publishes it on npm and Github. The release-it config is defined within the `package.json` file.                 |
 | ESLint                 | ESLint helps us enforce a consistent coding style across all the repos with multiple contributors.                                                                                                                                                                     |
 | EditorConfig           | The `.editorconfig` file in the root of every project configures your Code editor to use a set of rules for indentation and whitespace management. Again, Prettier is used for post formatting your code, and Editorconfig is used to configure the editor in advance. |
 | Conventional Changelog | All of the commits across all the repos uses [commitlint](https://github.com/conventional-changelog/commitlint/#what-is-commitlint) to enforce consistent commit messages.                                                                                             |
@@ -72,14 +70,14 @@ Following is the list of tools in use.
 
 | Command                  | Description                                                                                               |
 | ------------------------ | --------------------------------------------------------------------------------------------------------- |
-| `pnpm run test`          | Run project tests using `ts-node-maintained`                                                                         |
+| `pnpm run test`          | Run project tests                                                                                         |
 | `pnpm run test:coverage` | Run project tests with coverage option                                                                    |
-| `pnpm run build`       | Compile the TypeScript project to JavaScript. The compiled output is written inside the `build` directory |
-| `pnpm run release`       | Start the release process using `np`                                                                      |
+| `pnpm run build`         | Compile the TypeScript project to JavaScript. The compiled output is written inside the `build` directory |
+| `pnpm run release`       | Start the release process using `release-it`                                                              |
 | `pnpm run lint`          | Lint the codebase using ESlint                                                                            |
 | `pnpm run lint:check`    | Check if the codebase is linted using ESlint                                                              |
 | `pnpm run typecheck`     | Check if the codebase for syntax errors using `tsc`                                                       |
-| `pnpm run tool:code`     | Shortcut script for run lint:check and typecheck                                            |
+| `pnpm run tool:code`     | Shortcut script for run lint:check and typecheck                                                          |
 | `pnpm run tool:build`    | Shortcut script for run tool:code and additional run test                                                 |
 
 ## Coding style

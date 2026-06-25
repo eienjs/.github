@@ -5,25 +5,15 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: ["20", "22", "24"]
+        node: ["22", "24", "26"]
     steps:
       - name: Checkout
         uses: actions/checkout@v6
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
+      - name: Install pnpm, node and dependencies
+        uses: pnpm/setup@v1
         with:
-          standalone: false
-          run_install: false
-
-      - name: Install Node.js
-        uses: actions/setup-node@v6
-        with:
-          node-version: ${{ matrix.node }}
-          package-manager-cache: false
-
-      - name: Install dependencies
-        run: pnpm install
+          runtime: node@${{ matrix.node }}
 
       - name: Run tests
         run: pnpm run test

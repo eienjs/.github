@@ -7,11 +7,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          standalone: true
-          run_install: true
+      - name: Install pnpm, node and dependencies
+        uses: pnpm/setup@v1
 
       - name: Verify code linting and typechecking
         run: pnpm run tool:code
