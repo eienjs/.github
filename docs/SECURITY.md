@@ -4,7 +4,7 @@ We take the security of our projects extremely seriously. If you discover a secu
 
 ## 📧 Private Email (Recommended)
 Send an email to our security team:
-- **Email:** [EMAIL_ADDRESS]
+- **Email:** luffynando@gmail.com
 
 Please include as much detail as possible about the vulnerability, including:
 - A clear description of the issue
