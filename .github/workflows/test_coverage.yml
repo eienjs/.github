@@ -10,6 +10,8 @@ jobs:
 
       - name: Install pnpm, node and dependencies
         uses: pnpm/setup@v1
+        with:
+          runtime: node@24
 
       - name: Create code coverage
         run: pnpm run test:coverage

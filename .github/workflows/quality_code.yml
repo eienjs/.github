@@ -9,6 +9,8 @@ jobs:
 
       - name: Install pnpm, node and dependencies
         uses: pnpm/setup@v1
+        with:
+          runtime: node@24
 
       - name: Verify code linting and typechecking
         run: pnpm run tool:code
