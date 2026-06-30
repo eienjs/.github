@@ -1,0 +1,21 @@
+on: [workflow_call]
+
+jobs:
+  test_linux:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: ["24", "26"]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Install pnpm, node and dependencies
+        uses: pnpm/setup@v1
+        with:
+          runtime: node@${{ matrix.node }}
+
+      - name: Run tests
+        run: pnpm run test
+        env:
+          CI: true
